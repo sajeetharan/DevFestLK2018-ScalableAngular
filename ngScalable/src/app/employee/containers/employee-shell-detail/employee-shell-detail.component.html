@@ -1,0 +1,30 @@
+<div class='panel panel-primary' *ngIf='employee'>
+    <div class='panel-heading'>
+        Detail: {{employee.firstname}} {{employee.lastname}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Firstname:</div>
+                    <div class='col-md-6'>{{employee.firstname}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Lastname:</div>
+                    <div class='col-md-6'>{{employee.lastname}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>E-Mail:</div>
+                    <div class='col-md-6'>{{employee.email}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class="btn btn-primary" style="width:80px" [routerLink]="['/employees', employee.id]">
+            Edit
+        </a>
+    </div>
+</div>

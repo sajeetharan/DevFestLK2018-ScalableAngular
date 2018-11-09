@@ -1,0 +1,17 @@
+<div class="panel panel-primary" *ngIf="employees?.length">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+
+    <div class="panel-body">
+        <div class="list-group">
+            <button type="button" class="list-group-item" *ngFor="let employee of employees" (click)="onSelected(employee)"
+                [class.active]="employee?.id === selectedEmployee?.id">
+                {{ employee.firstname }} ({{ employee.lastname }})
+            </button>
+            <a style="margin-top: 25px;" [routerLink]="['/employees', 'new']">
+                New Entry
+            </a>
+        </div>
+    </div>
+</div>
